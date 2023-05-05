@@ -27,13 +27,13 @@ Route::post('login',[AuthController::class,'login']);
 Route::middleware('jwt.verify')->group(function(){
     Route::get('users',[UserController::class,'index']);
     
-    Route::get('products',[ProductController::class,'index']);
-    
-    Route::get('showproduct/{id}',[ProductController::class,'show']);
-    Route::post('createproducts',[ProductController::class,'store']);
-    Route::put('updateproduct/{id}',[ProductController::class,'update']);
-    Route::delete('deleteproduct/{id}',[ProductController::class,'destroy']);
 });
+Route::get('products',[ProductController::class,'index']);
+
+Route::get('showproduct/{id}',[ProductController::class,'show']);
+Route::post('createproducts',[ProductController::class,'store']);
+Route::put('updateproduct/{id}',[ProductController::class,'update']);
+Route::delete('deleteproduct/{id}',[ProductController::class,'destroy']);
 
 Route::get('categories',[ProductController::class,'getCategories']);
 //VENTA DE PRODUCTO
