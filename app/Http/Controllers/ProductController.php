@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\Productsale;
 use Illuminate\Http\Request;
@@ -118,8 +119,10 @@ class ProductController extends Controller
 
         $id_sales  = Productsale::where('sale_id', '=', $request->sale_id)->pluck('sale_id');
         foreach ($id_sales as $id_sale) {
+            
             return response()->json([
-                'message' => 'Ya existe una venta con id ' . $id_sale . ' por favor ingrese otro id'
+                'message' => 'Ya existe una venta con id ' . $id_sale . ' por favor ingrese otro id',
+                'code' => 25
             ]);
         }
 
@@ -149,6 +152,15 @@ class ProductController extends Controller
             'stock' => $stock,
 
         ]);
+    }
+
+    public function getCategories()
+    {
+
+        $categories = Category::all();
+        
+        
+        return $categories;
     }
 
     public function getProduct($reference, $category_id, $name_product, $id)
