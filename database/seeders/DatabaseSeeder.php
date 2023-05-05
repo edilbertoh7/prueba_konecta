@@ -17,18 +17,20 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'usuario',
+            'email' => 'usuario@usuario.com',
+            'password' => bcrypt('user'),
+        ]);
 
-        //$this->call(CategoriesTableSeeder::class);
 
-       // include('CategoriesTableSeeder.php');
+       
         $categiries = new CategoriesTableSeeder();
         $categiries->run();
         
-        Product::factory(20)->create();
+        Product::factory(10)->create();
+        $productsales = new ProductsalesTableSeeder();
+        $productsales->run();
 
         
     }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('price')->comment('precio del producto');
             $table->float('weight')->comment('peso del producto');
             $table->unsignedBigInteger('category_id')->comment('id de la categoria');
-            $table->string('stock',)->comment('stock del producto');
+            $table->unsignedBigInteger('stock',)->comment('stock del producto');
             $table->date('creation_date')->comment('fecha de creacion del producto');
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories');
