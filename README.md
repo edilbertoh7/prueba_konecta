@@ -5,12 +5,12 @@ comando
 composer install
 tambien es conveniente ejecutar npm install para instalar dependecias los modulos de node
 
-se debe tener crear una base de vacia en mysql con el nombre de `prueba-konect`
+se debe tener crear una base de datos vacia en mysql con el nombre de `prueba-konect`
 con la siguiente sentencia
 CREATE DATABASE `prueba-konecta`
 
 ## Ejecutar migraciones y seeder
-para que se cree la base de datos y se inserten los datos por defecto
+para que se cree la base de datos y se inserten los datos por defecto se deben ejecutar las migraciones con el siguiente comando
  php artisan migrate:fresh --seed
  
  ## ejecuta el proyecto 
